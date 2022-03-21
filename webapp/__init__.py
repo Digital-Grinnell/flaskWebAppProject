@@ -67,7 +67,7 @@ app.config['MAIL_PASSWORD'] = cfg[ACTIVE_CONFIG]["MAIL_PASSWORD"]
 
 # CONFIGURE LOGGING
 
-log_path = os.path.join (cwd, ".", "logs", "http.log")
+log_path = os.path.join (cwd, "", "logs", "http.log")
 logging.basicConfig(filename=log_path, level=logging.DEBUG)
 logger = logging.getLogger ()
 
