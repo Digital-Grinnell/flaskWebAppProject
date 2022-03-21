@@ -45,7 +45,7 @@ with open(config_path, 'r') as ymlfile:
 # At this moment we cannot take the information from the request (because there is no request, the app is still initialising)
 
 ACTIVE_CONFIG = "PRD"
-host_name = socket.gethostname() 
+host_name = socket.gethostname()
 if host_name in cfg["DEV_HOSTS"]:
     ACTIVE_CONFIG = "DEV"
 
@@ -67,7 +67,7 @@ app.config['MAIL_PASSWORD'] = cfg[ACTIVE_CONFIG]["MAIL_PASSWORD"]
 
 # CONFIGURE LOGGING
 
-log_path = os.path.join (cwd, "..", "logs", "http.log")
+log_path = os.path.join (cwd, ".", "logs", "http.log")
 logging.basicConfig(filename=log_path, level=logging.DEBUG)
 logger = logging.getLogger ()
 
@@ -99,7 +99,7 @@ db = mongo.db
 
 login_manager = LoginManager()
 login_manager.login_view = 'auth.login'
-login_manager.init_app(app)    
+login_manager.init_app(app)
 
 # We need a user_loader function to reload the user object through different sessions. This function must satisfy three conditions:
 # - it takes the unicode ID of a user;
@@ -133,7 +133,7 @@ swagger = Swagger(app)
 @app.route('/')
 def index():
     num_users = db.users.count_documents({})
-    num_files = db.files.count_documents({})    
+    num_files = db.files.count_documents({})
     return render_template('index.html', num_users=num_users, num_files=num_files)
 
 @app.route('/portal')
@@ -143,7 +143,7 @@ def portal():
         is_DATEV_session = session['is_DATEV_session']
     except:
         pass
-    return render_template('portal.html', is_DATEV_session = is_DATEV_session)    
+    return render_template('portal.html', is_DATEV_session = is_DATEV_session)
 
 
 ######################################################
