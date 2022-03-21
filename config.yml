@@ -1,0 +1,42 @@
+# NOTE: file has to be renamed to config.yml if you want to deploy it
+
+ALLOWED_EXTENSIONS: 
+  - json
+  - xml
+  - pdf
+
+DEV_HOSTS:
+  - "DESKTOP-3F5TDPS"
+  - "localhost"
+
+DEV:
+  SECRET_KEY: "9OLWxND4o83j4K4iuAAA"
+  MONGO_URI: "mongodb://localhost:27017/eic"
+  FILE_UPLOAD_PATH: "Data\\Dev-Data\\webFileVolume"  
+
+  MAIL_POP: pop.udag.de
+  MAIL_SMTP: smtp.udag.de
+  MAIL_IMAP: imap.udag.de
+  MAIL_DOMAIN: test.com
+  MAIL_USERNAME: info@test.com
+  MAIL_PASSWORD: test123
+
+  OIDC_CLIENT_ID: ddfdg1
+  OIDC_CLIENT_SECRET: sdfsdf3234
+
+PRD:
+  SECRET_KEY: "9OLWxND4o83j4K4iuAAA"
+  MONGO_URI: "mongodb://admin:adminpassword@111.22.33.444:27017/eic?authSource=admin"
+  FILE_UPLOAD_PATH: "Data\\Dev-Data\\webFileVolume"  
+
+  MAIL_POP: pop.udag.de
+  MAIL_SMTP: smtp.udag.de
+  MAIL_IMAP: imap.udag.de
+  MAIL_DOMAIN: test.com
+  MAIL_USERNAME: info@test.com
+  MAIL_PASSWORD: test123
+  
+  OIDC_CLIENT_ID: ddfdg1
+  OIDC_CLIENT_SECRET: sdfsdf3234
+
+
